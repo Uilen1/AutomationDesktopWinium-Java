@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         tags = "@example",
         features = {"features"},
-        glue = {"model","src/main/java/hooks"},
+        glue = {"model","hooks"},
         monochrome = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         plugin = {
