@@ -11,21 +11,37 @@ public class BaseMap {
     public WebElement numberCalculator(String number){
         return getDriver().findElement(By.id("num"+number+"Button"));
     }
+    public By byNumberCalculator(String number){
+        return By.id("num"+number+"Button");
+    }
     public WebElement equalCalculator() throws InterruptedException {
-        Thread.sleep(3000);
         return getDriver().findElement(By.id("equalButton"));
     }
+    public By byEqualCalculator(){
+        return By.id("equalButton");
+    }
+
     public WebElement operator(String operator) throws InterruptedException {
-        Thread.sleep(3000);
         return getDriver().findElement(By.id(operator+"Button"));
     }
 
+    public By byOperator(String operator){
+        return By.id(operator+"Button");
+    }
+
     public WebElement results() throws InterruptedException {
-        Thread.sleep(3000);
         return getDriver().findElement(By.id("CalculatorResults"));
     }
+
+    public By byResults(){
+        return By.id("CalculatorResults");
+    }
+
     public WebElement close() throws InterruptedException {
-        Thread.sleep(3000);
         return getDriver().findElement(By.id("Close"));
+    }
+
+    public By byClose(){
+        return By.id("Close");
     }
 }

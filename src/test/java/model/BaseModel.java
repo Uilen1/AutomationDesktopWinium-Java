@@ -5,17 +5,14 @@ import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 import maps.BaseMap;
-import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import steps.BaseStep;
-import utils.Utils;
 
 import java.net.MalformedURLException;
 
-public class BaseModel extends Utils{
+public class BaseModel{
     public static final Logger log = LoggerFactory.getLogger(BaseModel.class);
-    public BaseMap baseMap =  new BaseMap();
     public BaseStep baseStep =  new BaseStep();
 
     @Dado("que estou com o aplicativo iniciado")
@@ -31,10 +28,9 @@ public class BaseModel extends Utils{
     public void selecionoONumeroE(String number1) throws MalformedURLException {
         try {
             log.info("Quando seleciono o numero {}",number1);
-            Thread.sleep(3000);
             baseStep.selectedNumber(number1);
         }catch (Exception e){
-            log.error("Falha ao selecionar os numeros number1:{} e number2: {}",number1,e);
+            log.error("Falha ao selecionar os numeros number:{}",number1,e);
         }
     }
 
@@ -42,7 +38,6 @@ public class BaseModel extends Utils{
     public void selecionoONumeroE() throws MalformedURLException {
         try {
             log.info("Quando seleciono para obter o resultado");
-            Thread.sleep(3000);
             baseStep.selectedEquals();
         }catch (Exception e){
             log.error("Falha ao selecionar o operador de igual",e);
@@ -53,7 +48,6 @@ public class BaseModel extends Utils{
     public void selecionoAOperação(String operator) throws MalformedURLException {
         try {
             log.info("E seleciono a operação {}",operator);
-            Thread.sleep(3000);
             baseStep.selectedOperator(operator);
         }catch (Exception e){
             log.error("Falha ao selecionar a operação: {}",operator,e);
