@@ -7,34 +7,36 @@ import org.openqa.selenium.WebElement;
 import utils.Utils;
 import winium.elements.desktop.DesktopElement;
 
+import java.awt.*;
+
 public class BaseStep extends Utils {
 
     public BaseMap baseMap = new BaseMap();
 
-    public void appWithFocus(){
-        switchToWindowApplication("Calculadora");
+    public void appWithFocus() throws AWTException {
+        maximizeWindow();
     }
 
     public void selectedNumber(String number) throws Exception{
-        waitElementAppear(baseMap.byNumberCalculator(number));
+        waitVisibilityBy(baseMap.byNumberCalculator(number));
         WebElement element = baseMap.numberCalculator(number);
         clicar(element);
     }
     public void selectedOperator(String operator) throws Exception{
-        waitElementAppear(baseMap.byOperator(operator));
+        waitVisibilityBy(baseMap.byOperator(operator));
         clicar(baseMap.operator(operator));
     }
     public void selectedEquals() throws Exception{
-        waitElementAppear(baseMap.byEqualCalculator());
+        waitVisibilityBy(baseMap.byEqualCalculator());
         clicar(baseMap.equalCalculator());
     }
     public void selectedClose() throws Exception{
-        waitElementAppear(baseMap.byClose());
+        waitVisibilityBy(baseMap.byClose());
         clicar(baseMap.close());
     }
     public void validatableResult(String expectedResult) throws Exception{
         Boolean aux;
-        waitElementAppear(baseMap.byResults());
+        waitVisibilityBy(baseMap.byResults());
         String result = baseMap.results().getAttribute("Name");
         if(result.contains(expectedResult)){
             aux = true;

@@ -28,8 +28,8 @@ public class DriverFactory {
     public static void createDriver() {
         try {
             options = new DesktopOptions();
-            options.setApplicationPath("C:/Windows/System32/calc.exe");
-            File driverPath = new File(System.getProperty("user.dir")+"/exec/Winium.Desktop.Driver/Winium.Desktop.Driver.exe");
+            options.setApplicationPath(utils.getProperties("pathApplication"));
+            File driverPath = new File(System.getProperty("user.dir")+utils.getProperties("pathToDriver"));
             service = new WiniumDriverService.Builder().
                     usingDriverExecutable(driverPath).
                     usingPort(9999).
