@@ -11,11 +11,11 @@ Funcionalidade: Validar as funcionalidade da calculadora do windowns
   @example
   Esquema do Cenário: Validar a multiplicação entre 8x9
     Dado que estou com o aplicativo iniciado
-#    Quando seleciono o numero "<number1>"
-#    E seleciono a operação "<operation>"
-#    E seleciono o numero "<number2>"
-#    E seleciono para obter o resultado
-#    Então o resultado é "<result>"
+    Quando seleciono o numero "<number1>"
+    E seleciono a operação "<operation>"
+    E seleciono o numero "<number2>"
+    E seleciono para obter o resultado
+    Então o resultado é "<result>"
 
     Exemplos:
     |number1|number2|result|operation|
