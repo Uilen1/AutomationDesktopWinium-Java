@@ -12,6 +12,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import static factory.DriverFactory.getDriver;
 
@@ -75,5 +76,11 @@ public class Utils {
         }catch (Exception e){
             throw new Exception("Não foi possivel verificar se o elemento está presente");
         }
+    }
+
+    public void switchToWindowApplication(String name ){
+        WebElement newWindow = getDriver().findElement(By.name(name));
+        String newWindowHandle = newWindow.getAttribute("NativeWindowHandle");
+        getDriver().switchTo().window(newWindowHandle);
     }
 }

@@ -11,6 +11,10 @@ public class BaseStep extends Utils {
 
     public BaseMap baseMap = new BaseMap();
 
+    public void appWithFocus(){
+        switchToWindowApplication("Calculadora");
+    }
+
     public void selectedNumber(String number) throws Exception{
         waitElementAppear(baseMap.byNumberCalculator(number));
         WebElement element = baseMap.numberCalculator(number);

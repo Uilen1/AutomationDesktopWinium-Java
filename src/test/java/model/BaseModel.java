@@ -19,6 +19,7 @@ public class BaseModel{
     public void queEstouComOAplicativoIniciado() throws MalformedURLException {
         try {
             log.info("Dado que estou com o aplicativo iniciado");
+            baseStep.appWithFocus();
         }catch (Exception e){
             log.error("Falha ao inciar o aplicativo",e);
         }
