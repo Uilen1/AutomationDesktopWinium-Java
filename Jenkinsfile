@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
-                sh 'mvn clean'
+                bat 'mvn clean'
             }
         }
         stage('Tests') {
@@ -19,7 +19,7 @@ pipeline {
                              "#                                      #\n" +
                              "########################################\n"
                         echo "Está em execução a tag = ${tags}"
-                        sh "mvn test -Dcucumber.options='--tags @${tags} --tags ~@failed'"
+                        bat "mvn test -Dcucumber.options='--tags @${tags} --tags ~@failed'"
                         echo "########################################\n" +
                             "#                                      #\n" +
                             "#            FIM DOS TESTES            #\n" +
