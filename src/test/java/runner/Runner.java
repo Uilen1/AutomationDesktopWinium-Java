@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        tags = "@example",
+        tags = "@example and not @failed",
         features = {"features"},
         glue = {"model","hooks"},
         monochrome = true,

@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Clean') {
+        stage('Clean & Build') {
             steps {
                 bat 'mvn clean'
             }
@@ -19,7 +19,7 @@ pipeline {
                              "#                                      #\n" +
                              "########################################\n"
                         echo "Está em execução a tag = ${tags}"
-                        bat "mvn test -Dcucumber.options='--tags @${tags} --tags ~@failed'"
+                        bat "mvn test -Dcucumber.filter.tags='@${tags} and not @failed'"
                         echo "########################################\n" +
                             "#                                      #\n" +
                             "#            FIM DOS TESTES            #\n" +
@@ -34,9 +34,12 @@ pipeline {
             }
         }
     }
+
     post {
         always {
-            allure includeProperties: false, jdk: 'JDK 8', results: [[path: 'target/allure-results']]
+            allure includeProperties: false,
+            jdk: '',
+            results: [[path: 'target/allure-results']]
         }
     }
 }
