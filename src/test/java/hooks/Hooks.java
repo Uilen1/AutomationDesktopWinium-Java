@@ -3,6 +3,7 @@ package hooks;
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.qameta.allure.Allure;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import utils.Utils;
@@ -32,6 +33,7 @@ public class Hooks {
     @AfterStep
     public void getScreenShot() throws Exception {
         log.info("obtendo screenshot da tela");
+        Utils.saveScreenshotPNGAllure();
         utils.screenShot();
     }
 }

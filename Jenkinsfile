@@ -19,7 +19,7 @@ pipeline {
                              "#                                      #\n" +
                              "########################################\n"
                         echo "Está em execução a tag = ${tags}"
-                        bat "mvn test -Dcucumber.filter.tags='@${tags} and not @failed'"
+                        bat "mvn test -Dcucumber.filter.tags='${tags}'"
                         echo "########################################\n" +
                             "#                                      #\n" +
                             "#            FIM DOS TESTES            #\n" +

@@ -1,10 +1,12 @@
 package utils;
 
+import io.qameta.allure.Attachment;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.junit.rules.Timeout;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -40,6 +42,12 @@ public class Utils {
         }catch (Exception e){
             throw  new Exception("Não foi possível tirar o screeShot da tela");
         }
+    }
+
+    @Attachment(value = "Page Screenshot", type = "image/png")
+    public static byte[] saveScreenshotPNGAllure(){
+        TakesScreenshot takeSs = (TakesScreenshot) getDriver();
+        return takeSs.getScreenshotAs(OutputType.BYTES);
     }
 
     public void maximizeWindow() throws AWTException {
