@@ -27,7 +27,7 @@ public class Hooks {
     public void after_all(){
         log.info("Finalizando o driver da sessão");
         killDriver();
-//        utils.killProcess(utils.getProperties("processToKill"));
+        utils.killProcess(utils.getProperties("processToKill"));
     }
 
     @AfterStep

@@ -38,7 +38,7 @@ public class Utils {
             Date date = new Date();
             SimpleDateFormat sdf = new SimpleDateFormat("dd_MM_yyyy HH_mm_ss_SSS");
             File screenShot = getDriver().getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(screenShot,new File("evidencias/screenShots/"+ sdf.format(date)+".png"));
+            FileUtils.copyFile(screenShot,new File("src/test/resources/evidencias/screenShots/"+ sdf.format(date)+".png"));
         }catch (Exception e){
             throw  new Exception("Não foi possível tirar o screeShot da tela");
         }
