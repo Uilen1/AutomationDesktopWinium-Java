@@ -22,9 +22,9 @@ pipeline {
         stage('Configure Remote Machine') {
                     steps {
                         echo 'Fechando winAppDriver existentes'
-                        bat 'src/test/resources/exec/kill_winappdriver.cmd'
+//                         bat 'src/test/resources/exec/kill_winappdriver.cmd'
                         echo 'Realizando logout da maquina remota'
-                        bat 'src/test/resources/exec/logout-rdp.cmd'
+//                         bat 'src/test/resources/exec/logout-rdp.cmd'
                     }
                 }
         stage('Tests') {
