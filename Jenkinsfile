@@ -5,6 +5,7 @@ pipeline {
     options {
         office365ConnectorWebhooks(
         [[name: 'automationDesktopWinium',
+        notifyAborted: true,
         notifyBackToNormal: true,
         notifyFailure: true,
         notifySuccess: true,
