@@ -9,6 +9,7 @@ pipeline {
         notifyFailure: true,
         notifySuccess: true,
         notifyUnstable: true,
+        notifyRepeatedFailure: true
         url: 'https://yamantecnologialtda.webhook.office.com/webhookb2/7e23d6b8-cf54-43b6-964e-de399af80169@b4e1747f-fa7f-4899-b109-363f70af9b4c/JenkinsCI/7f4a678f880b4ce995e0a72c35be3a03/d2fa3f5d-5194-4b72-8321-9580f1c0963e']])
     }
 
